@@ -1,0 +1,43 @@
+body { font-family: Arial, sans-serif;
+    background: #f0f4f8;
+    margin: 0;
+    padding: 20px; }
+main { display: grid;
+    gap: 30px;
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+header { display: flex;
+    justify-content: space-between;
+    align-items: center; }
+form { display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    gap: 10px; align-items: end; }
+input { padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px; }
+button { padding: 10px 20px;
+    background: #198754; color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer; }
+.btn-logout { background: #dc3545;
+    color: white;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 5px; }
+.btn-delete { color: #dc3545;
+    text-decoration: none;
+    font-weight: bold; }
+table { width: 100%;
+    border-collapse: collapse;
+    text-align: left; }
+th, td { padding: 12px;
+    border-bottom: 1px solid #ddd; }
+.btn-edit { color: #0d6efd;
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 15px; }

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestión de Usuarios</title>
+    <link rel="stylesheet" th:href="@{/css/crud.css}">
+</head>
+<body>
+<main>
+    <header>
+        <h1>Panel CRUD de Usuarios</h1>
+        <form th:action="@{/logout}" method="post" style="display:inline;">
+            <button type="submit" class="btn-logout">Cerrar Sesión</button>
+        </form>
+    </header>
+
+    <section>
+        <h3>Agregar Nuevo</h3>
+        <form th:action="@{/usuarios/guardar}" th:object="${nuevoUsuario}" method="POST">
+            <label>
+                Nombre:
+                <input type="text" th:field="*{nombre}" required>
+            </label>
+            <label>
+                Email:
+                <input type="email" th:field="*{email}" required>
+            </label>
+            <button type="submit">Guardar</button>
+        </form>
+    </section>
+
+    <section>
+        <h3>Lista Actual</h3>
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Email</th>
+                <th>Acción</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="u : ${usuarios}">
+                <td th:text="${u.id}"></td>
+                <td th:text="${u.nombre}"></td>
+                <td th:text="${u.email}"></td>
+                <td>
+                    <a th:href="@{/usuarios/editar/{id}(id=${u.id})}" class="btn-edit">Editar</a>
+
+                    <a th:href="@{/usuarios/eliminar/{id}(id=${u.id})}" class="btn-delete">Eliminar</a>
+                </ td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+</main>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login del Sistema</title>
+    <link rel="stylesheet" th:href="@{/css/login.css}">
+</head>
+<body>
+<main>
+    <header>
+        <h2>Iniciar Sesión</h2>
+        <p>Ingresa tus credenciales para acceder al CRUD.</p>
+    </header>
+
+    <form th:action="@{/login}" method="POST">
+
+        <p th:if="${param.error}" class="error">Usuario o contraseña inválidos.</p>
+
+        <label for="username">Usuario</label>
+        <input type="text" id="username" name="username" placeholder="Ej: admin" required>
+
+        <label for="password">Contraseña</label>
+        <input type="password" id="password" name="password" placeholder="Ej: 1234" required>
+
+        <button type="submit">Ingresar</button>
+    </form>
+</main>
+</body>
+</html>
